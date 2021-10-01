@@ -1,0 +1,7 @@
+{
+    "apple": "https://newsapi.org/v2/everything?apiKey=0da0f17eb3974a2e9c8ffe07707ef652&sortBy=popularity&q=Apple",
+    "tesla": "https://newsapi.org/v2/everything?apiKey=0da0f17eb3974a2e9c8ffe07707ef652&sortBy=popularity&q=tesla",
+    "headlines": "https://newsapi.org/v2/everything?apiKey=0da0f17eb3974a2e9c8ffe07707ef652&sortBy=popularity&q=headlines",
+    "techcrunch":"https://newsapi.org/v2/everything?apiKey=0da0f17eb3974a2e9c8ffe07707ef652&sortBy=popularity&q=techcrunch",
+    "wallstreet": "https://newsapi.org/v2/everything?apiKey=0da0f17eb3974a2e9c8ffe07707ef652&sortBy=popularity&q=wallstreet"
+}

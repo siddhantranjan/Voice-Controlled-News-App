@@ -1,0 +1,48 @@
+.Post {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.home {
+  margin: auto;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 20px;
+  border: 2px solid #058a78;
+  text-transform: uppercase;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.home:hover {
+  border-radius: 30px;
+}
+
+.news-card-cat {
+  width: 60%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.categories {
+  border: 0px solid rgb(10, 104, 104);
+  margin: 20px;
+  height: 150px;
+  width: 130px;
+  font-size: 20px;
+  color: rgb(8, 153, 39);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.news-headlines {
+  position: relative;
+  top: 200px;
+  margin-bottom: 200px;
+  width: 95%;
+  left: 2.5%;
+  height: auto;
+  background-color: #f8f8ff;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
