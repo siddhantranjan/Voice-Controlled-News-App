@@ -34,12 +34,13 @@ const Articles = ({ post, activePost, i }) => {
       <div class="news-card">
         <img src={post.urlToImage} alt="" />
         <div class="news-card__text-wrapper">
+          <h3>{i+1}</h3>
           <h2 class="news-card__title">{post.title}</h2>
           <div class="news-card__post-date">{post.published_at}</div>
           <div class="news-card__details-wrapper">
             <p class="news-card__excerpt">{post.description}</p>
-            <a href={post.url} target="_blank" rel="noreferrer">
-              Go to Site
+            <a href={post.url} target="_blank" rel="noreferrer" >
+              <button class="news-card_url">Go to Site</button>
             </a>
           </div>
         </div>

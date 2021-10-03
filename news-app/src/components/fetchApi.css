@@ -31,9 +31,17 @@
   height: 150px;
   width: 130px;
   font-size: 20px;
-  color: rgb(8, 153, 39);
+  color: #7D141D;
   border-radius: 0.5rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.categories:hover{
+  box-shadow: 0 0 1rem #262223;
+  background-color: #262223;
+  color: #DDC6B6;
+  cursor: pointer;
 }
 
 .news-headlines {
@@ -45,4 +53,13 @@
   height: auto;
   background-color: #f8f8ff;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.news-card_url{
+  border-radius: 5px;
+  margin: auto;
+}
+
+.news-card_url:hover{
+  cursor:pointer;
 }

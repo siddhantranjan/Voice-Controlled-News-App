@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import wordsToNumbers from "words-to-numbers";
+import alanBtn from "@alan-ai/alan-sdk-web";
 
 import "./fetchApi.css";
 import api from "./api.json";
-import alanBtn from "@alan-ai/alan-sdk-web";
 import Articles from "./articles";
 
 const alanKey =
@@ -16,11 +17,25 @@ const ShowApi = () => {
   useEffect(() => {
     alanBtn({
       key: alanKey,
-      onCommand: ({ command }) => {
+      onCommand: ({ command, posts, number }) => {
         if (command === "home") {
           resetWebsite();
         } else if (command === "highlight") {
           setActivePost((prevActivePost) => prevActivePost + 1);
+        } else if (command === "open") {
+          const parsedNumber =
+            number.length > 2
+              ? wordsToNumbers(number, { fuzzy: true })
+              : number;
+          const post = posts[parsedNumber - 1];
+          if (parsedNumber > posts.length) {
+            alanBtn().playText("Please try that again...");
+          } else if (post) {
+            window.open(post.url, "_blank");
+            alanBtn().playText("Opening...");
+          } else {
+            alanBtn().playText("Please try that again...");
+          }
         } else {
           fetchDataFromUrl(command);
           setActivePost(-1);
@@ -28,7 +43,6 @@ const ShowApi = () => {
       },
     });
   }, []);
-
   function fetchDataFromUrl(topics) {
     axios
       .get(api[topics])
@@ -53,8 +67,8 @@ const ShowApi = () => {
       <div className="news-headlines">
         {posts.length
           ? posts.map((post, i) => (
-              <Articles post={post} activePost={activePost} i={i} />
-            ))
+            <Articles post={post} activePost={activePost} i={i} />
+          ))
           : null}
       </div>
       <div className="news-card-cat">
